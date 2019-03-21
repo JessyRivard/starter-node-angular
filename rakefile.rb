@@ -1,3 +1,5 @@
-require File.expand_path('../config/application', __FILE__)
-
-Blog::Application.load_tasks
+require ‘rake/testtask’
+task default: "test"
+Rake::TestTask.new do |task|
+ task.pattern = ‘test/*_test.rb’
+end
